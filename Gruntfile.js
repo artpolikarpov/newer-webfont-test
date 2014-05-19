@@ -1,8 +1,8 @@
 module.exports = function (grunt) {
-	'use strict';
-	// Project configuration
-	grunt.initConfig({
-		watch: {
+  'use strict';
+  // Project configuration
+  grunt.initConfig({
+    watch: {
       options: {
         atBegin: true
       },
@@ -13,7 +13,7 @@ module.exports = function (grunt) {
           atBegin: false
         }
       }
-		},
+    },
     webfont: {
       icons: {
         src: 'src/icons/*.svg',
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     }
   });
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Note that ttfautohint for grunt-webfont is optional, but your generated font will not be properly hinted if it’s not installed:
   // OS X:
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-newer');
 
-	// Default task
-	grunt.registerTask('default', 'newer:webfont'.split(' '));
+  // Default task
+  grunt.registerTask('default', 'newer:webfont'.split(' '));
 
 };
