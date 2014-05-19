@@ -2,18 +2,6 @@ module.exports = function (grunt) {
   'use strict';
   // Project configuration
   grunt.initConfig({
-    watch: {
-      options: {
-        atBegin: true
-      },
-      icons: {
-        files: 'application/sass/icons/*.svg',
-        tasks: 'newer:webfont',
-        options: {
-          atBegin: false
-        }
-      }
-    },
     webfont: {
       icons: {
         src: 'src/icons/*.svg',
@@ -21,6 +9,18 @@ module.exports = function (grunt) {
         destCss: 'out/css',
         options: {
           htmlDemo: false
+        }
+      }
+    },
+    watch: {
+      options: {
+        atBegin: true
+      },
+      icons: {
+        files: '<%= webfont.icons.src %>',
+        tasks: 'newer:webfont',
+        options: {
+          atBegin: false
         }
       }
     }
